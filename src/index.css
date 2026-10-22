@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Design tokens: restrained agricultural green + signal yellow on warm neutrals. */
+@theme {
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --color-jd-900: #14321a;
+  --color-jd-800: #1d4524;
+  --color-jd-700: #285e2f;
+  --color-jd-600: #367c2b;
+  --color-jd-500: #4a9a3c;
+  --color-jd-100: #e6f0e1;
+  --color-jd-50: #f3f8f0;
+  --color-signal: #ffde00;
+  --color-signal-soft: #fff6c2;
+  --color-ink: #1b1f1c;
+  --color-muted: #5b635d;
+  --color-line: #dfe3dc;
+  --color-surface: #f6f7f4;
+  --color-danger: #b42318;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5a00;
+  --color-warn-soft: #fff4dc;
+  --color-info: #1f5f8b;
+  --color-info-soft: #e8f2f9;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-jd-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-signal-soft);
+}
+
+@layer components {
+  .prose-guide p { line-height: 1.65; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { @apply rounded-xl border border-line bg-white; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
