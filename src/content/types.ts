@@ -4,6 +4,8 @@
 
 /** How well a piece of information is backed by the manual for this tractor. */
 export type Verification =
+  /** The owner has confirmed the tractor has this (used for the configuration). */
+  | "bekreftet"
   /** Stated in OMAL219620 for the 6120M / AutoQuad PLUS / cab tractors. */
   | "verifisert"
   /** In the manual, but only applies if the tractor has that equipment or version. */

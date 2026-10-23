@@ -68,6 +68,7 @@ export function HomePage() {
           <div>
             <p className="chip bg-jd-100 text-jd-800">Interaktiv førerguide · norsk bokmål</p>
             <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-jd-900 sm:text-4xl">{TRACTOR.model}</h1>
+            <p className="mt-1 font-semibold text-jd-800">Modellår {TRACTOR.modelYear}</p>
             <p className="mt-3 text-lg leading-relaxed text-muted">
               Lær betjening, daglig kontroll og feilsøking — med 3D-modell, førerhusutforsker og kildehenvisning til operatørmanualen {TRACTOR.manual}.
             </p>
@@ -179,7 +180,7 @@ export function HomePage() {
 
       <section aria-labelledby="konfig">
         <h2 id="konfig" className="mb-1 text-lg font-bold text-jd-900">Denne traktoren</h2>
-        <p className="mb-3 text-sm text-muted">Oppgitt konfigurasjon sammenholdt med manualen. Gule punkter må sjekkes på selve traktoren.</p>
+        <p className="mb-3 text-sm text-muted">Utstyret er bekreftet av eieren og sammenholdt med manualen. Noen detaljer gjenstår. Se «Sjekk» på kildesiden.</p>
         <div className="card divide-y divide-line">
           {CONFIG.map((c) => (
             <div key={c.label} className="grid gap-1 px-4 py-3 sm:grid-cols-[180px_1fr_auto] sm:items-center sm:gap-4">

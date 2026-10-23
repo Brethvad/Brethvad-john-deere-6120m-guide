@@ -8,6 +8,9 @@ export const TRACTOR = {
   model: "John Deere 6120M",
   manual: "OMAL219620 (utgave 19, © 2020)",
   manualCovers: "6110M, 6120M, 6130M og 6145M",
+  modelYear: "2023",
+  /** Not supplied yet. */
+  serial: null as string | null,
 };
 
 export interface ConfigItem {
@@ -25,27 +28,34 @@ export const CONFIG: ConfigItem[] = [
     supplied: "John Deere 6120M",
     manual:
       "Manualen OMAL219620 dekker 6110M–6145M. For 6120M oppgir den 4-sylindret motor (4045HL), 88 kW ved 2100 o/min og 542 Nm ved 1500 o/min.",
-    verification: "verifisert",
+    verification: "bekreftet",
     sources: ["spec-engine"],
   },
   {
-    label: "Modellår og serienummer",
-    supplied: "Ikke oppgitt",
+    label: "Modellår",
+    supplied: "2023",
     manual:
-      "Manualen er fra 2020 og nevner modellår 2019 (MY19) for enkelte detaljer. Motorversjonen (Stage IV versjon 1–3 eller Stage V) avhenger av produksjonsår.",
-    verification: "uverifisert",
+      "Manualen guiden bygger på er utgave 19 fra 2020, og den nevner modellår 2019 (MY19) for enkelte detaljer. En 2023-modell er nyere enn manualen. Detaljer kan derfor ha endret seg, for eksempel motorversjon (Stage V), display og programvare.",
+    verification: "bekreftet",
     todo:
-      "Les produktidentifikasjonsnummeret (PIN) på typeskiltet på venstre side og motornummeret på høyre side av motoren. Sjekk med forhandler at OMAL219620 er riktig manual for akkurat dette serienummeret.",
-    sources: ["serial-plate", "spec-engine"],
+      "Spør forhandleren om det finnes en nyere utgave av operatørmanualen for 2023-modellen. Finnes den, er den mer korrekt enn denne guiden der de to er uenige.",
+    sources: ["spec-engine"],
+  },
+  {
+    label: "Serienummer (PIN)",
+    supplied: "Kommer senere",
+    manual:
+      "PIN står på typeskiltet på venstre side. Motornummeret står på høyre side av motoren. Med PIN kan forhandleren slå opp nøyaktig utstyr og riktig manual.",
+    verification: "uverifisert",
+    todo: "Les av PIN og motornummer, og legg dem inn her. Sjekk deretter med forhandler hvilken manual som gjelder for akkurat dette serienummeret.",
+    sources: ["serial-plate"],
   },
   {
     label: "Girkasse",
     supplied: "AutoQuad, 24/24, 40 km/t",
     manual:
-      "Manualen har ingen egen «AutoQuad». Den beskriver AutoQuad™ PLUS (24 forover/24 bakover, 40 km/t) i seksjon 48, ved siden av PowrQuad™, PowrQuad™ PLUS og CommandQuad™ PLUS. Guiden forutsetter AutoQuad™ PLUS.",
-    verification: "avhenger",
-    todo:
-      "Bekreft at girkassen er AutoQuad™ PLUS: gruppespaken skal ha girknapper, en Automatic-knapp og en håndclutch-knapp, og instrumentpanelet skal ha et AUTO-symbol ved girindikatoren. Har traktoren egen girspak i stedet for knapper, er det en PowrQuad™, og girkassedelen gjelder ikke.",
+      "I manualen heter denne girkassen AutoQuad™ PLUS (24 forover/24 bakover, 40 km/t), beskrevet i seksjon 48. Guiden bruker manualens navn.",
+    verification: "bekreftet",
     sources: ["aq-shift", "travel-speed", "controls-pq-aq", "instrument-panel"],
   },
   {
@@ -53,9 +63,9 @@ export const CONFIG: ConfigItem[] = [
     supplied: "Fronthydraulikk",
     manual:
       "Manualen beskriver tre ulike ting foran: (1) Economy frontlift med løft/senk via SCV I og egen stengeventil, (2) frontkoplinger for redskap via SCV II, og (3) hydraulikkuttak foran og/eller under høyre trinn styrt med multifunksjonsspaken (typisk for frontlaster). Frontlift og frontkraftuttak er eget ekstrautstyr.",
-    verification: "avhenger",
+    verification: "bekreftet",
     todo:
-      "Sjekk hva som faktisk sitter foran: Er det et trepunkt frontløft med stengeventil? Er det bare hurtigkoplinger foran? Styres de fra SCV-spakene eller fra multifunksjonsspaken (joystick)? Er det frontkraftuttak (egen PTO-bryter)?",
+      "Utstyret er bekreftet, men ikke hvilken variant. Er det trepunkt frontløft med stengeventil, bare hurtigkoplinger foran, eller styring fra multifunksjonsspaken (joystick)? Finnes frontkraftuttak (egen PTO-bryter)?",
     sources: ["scv-levers", "front-hitch-economy", "front-hitch-economy-controls", "scv-front-hitch-hoses", "mfl-front-loader"],
   },
   {
@@ -63,7 +73,7 @@ export const CONFIG: ConfigItem[] = [
     supplied: "Ja",
     manual:
       "Fjæret foraksel virker helautomatisk over 1,5 km/t. Feil vises med gult CAUTION- eller rødt STOP-lys. Trykkakkumulatoren skal kontrolleres og senere byttes av forhandler.",
-    verification: "verifisert",
+    verification: "bekreftet",
     sources: ["front-suspension", "front-axle-accumulator"],
   },
   {
@@ -71,18 +81,18 @@ export const CONFIG: ConfigItem[] = [
     supplied: "Ja",
     manual:
       "Manualen nevner både mekanisk førerhusfjæring (fjærben med innstillingsring, kontroll «ved behov») og hydraulisk førerhusfjæring (sylinder med smørepunkt). Den beskriver ingen betjening fra førersetet.",
-    verification: "avhenger",
+    verification: "bekreftet",
     todo:
-      "Se bak førerhuset (mellom førerhus og bakskjermer): Er det fjærben med skrufjær og innstillingsring (mekanisk) eller hydraulikksylindre (hydraulisk)?",
+      "Utstyret er bekreftet, men ikke typen. Se bak førerhuset (mellom førerhus og bakskjermer): fjærben med skrufjær og innstillingsring er mekanisk, hydraulikksylindre er hydraulisk. Det avgjør om sylinderen skal smøres i den månedlige kontrollen.",
     sources: ["cab-suspension-check", "lubrication-points"],
   },
   {
-    label: "LED-lyspakke",
+    label: "LED-lys",
     supplied: "LED-lys",
     manual:
       "Manualen beskriver lysfunksjonene og bryterne, men ikke en egen «LED-pakke». Den eneste LED-spesifikke opplysningen er at defekte LED-lykter byttes som hel enhet. Arbeidslys foran i hjørnene, på taket, på bakskjermene og ekstra frontlys er ekstrautstyr.",
-    verification: "avhenger",
-    todo: "Gå rundt traktoren med lyset på og noter hvilke lykter som finnes (se sjekklisten på Lys-siden).",
+    verification: "bekreftet",
+    todo: "Hvilke lykter som sitter på, er ikke kartlagt. Gå rundt traktoren med lyset på og noter dem (se sjekklisten på Lys-siden).",
     sources: ["lights-overview", "worklight-switches-cab"],
   },
   {
@@ -90,7 +100,7 @@ export const CONFIG: ConfigItem[] = [
     supplied: "Førerhus (fjæret)",
     manual:
       "Guiden beskriver betjening for traktor med førerhus. Manualen har egne avsnitt for åpen førerplass, men de er ikke tatt med.",
-    verification: "verifisert",
+    verification: "bekreftet",
     sources: ["light-switch-cab", "emergency-exits"],
   },
   {

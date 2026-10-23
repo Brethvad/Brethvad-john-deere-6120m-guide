@@ -253,7 +253,7 @@ export function SourcesPage() {
           {CONFIG.map((c) => (
             <div key={c.label} className="card p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="font-bold">{c.label} <span className="font-normal text-muted">— oppgitt: {c.supplied}</span></p>
+                <p className="font-bold">{c.label} <span className="font-normal text-muted">— {c.supplied}</span></p>
                 <VerificationBadge value={c.verification} />
               </div>
               <p className="mt-2 text-[15px] leading-relaxed">{c.manual}</p>
@@ -295,9 +295,9 @@ export function SourcesPage() {
       <section>
         <h2 className="mb-2 text-xl font-bold text-jd-900">Kjente begrensninger</h2>
         <ul className="list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed">
-          <li>Girkassen er oppgitt som «AutoQuad». Manualen beskriver AutoQuad™ PLUS — det er lagt til grunn, men må bekreftes.</li>
-          <li>Hva «fronthydraulikk» består av (frontløft, frontkoplinger og/eller frontlasteruttak) er ikke bekreftet.</li>
-          <li>Førerhusfjæringens type (mekanisk eller hydraulisk) og LED-pakkens innhold er ikke bekreftet.</li>
+          <li>Traktoren er en {TRACTOR.modelYear}-modell, mens manualen er utgave 19 fra 2020. En nyere utgave kan avvike på enkelte punkter. Serienummeret er ikke lagt inn ennå.</li>
+          <li>Eieren har bekreftet fronthydraulikk, men ikke hvilken variant (frontløft, frontkoplinger og/eller frontlasteruttak).</li>
+          <li>Eieren har bekreftet førerhusfjæring og LED-lys, men ikke fjæringstypen (mekanisk eller hydraulisk) eller hvilke lykter som sitter på.</li>
           <li>Plasseringen av enkelte brytere (firehjulstrekk, differensialsperre, krypegir) vises ikke i oversiktsbildene guiden bygger på.</li>
           <li>Manualen beskriver ikke speiljustering, og serviceoversiktens tabell kunne ikke leses kolonne for kolonne. Intervallene er derfor hentet fra hvilket servicekapittel oppgaven står i.</li>
           <li>Manualen er selvmotsigende om tauing: ett avsnitt sier at traktoren ikke kan taues, et annet beskriver tauing. Guiden anbefaler frakt på henger.</li>

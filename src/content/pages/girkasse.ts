@@ -12,14 +12,14 @@ export const girkasse: Page = {
     {
       id: "variant",
       title: "Hvilken girkasse gjelder dette?",
-      verification: "avhenger",
+      verification: "bekreftet",
       blocks: [
         {
           type: "callout",
-          kind: "usikker",
-          title: "Bekreft girkassetypen",
+          kind: "merk",
+          title: "Girkassen på denne traktoren",
           text:
-            "Traktoren er oppgitt med «AutoQuad». Manualen OMAL219620 beskriver ikke en ren AutoQuad, men AutoQuad™ PLUS (24/24, 40 km/t). Denne siden gjelder AutoQuad™ PLUS. Kjennetegn: gruppespaken har girknapper, en Automatic-knapp og en håndclutch-knapp, og displayet har et AUTO-symbol. Har traktoren egen girspak, er det PowrQuad™, og siden gjelder ikke.",
+            "Eieren har bekreftet AutoQuad 24/24 med 40 km/t. I manualen OMAL219620 heter den AutoQuad™ PLUS, og den er beskrevet i seksjon 48. Kjennetegn: gruppespaken har girknapper, en Automatic-knapp og en håndclutch-knapp, og displayet har et AUTO-symbol.",
         },
         {
           type: "table",
@@ -28,7 +28,7 @@ export const girkasse: Page = {
           rows: [
             ["PowrQuad™", "16/16 eller 24/24", "Egen girspak, gruppe med clutchpedal", "Nei"],
             ["PowrQuad™ PLUS", "16/16 eller 24/24", "Girknapper på gruppespaken, ingen automatikk", "Nei (men mange betjeningsdetaljer er like)"],
-            ["AutoQuad™ PLUS", "24/24, 40 km/t", "Girknapper + automatisk girskift innen gruppen", "Ja — antatt"],
+            ["AutoQuad™ PLUS", "24/24, 40 km/t", "Girknapper + automatisk girskift innen gruppen", "Ja — bekreftet av eier"],
             ["CommandQuad™ PLUS", "24/24", "Egen kjørespak, hastighetshjul, park-spak", "Nei"],
           ],
         },

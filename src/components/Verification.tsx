@@ -1,7 +1,13 @@
-import { CheckCircle2, CircleHelp, Settings2 } from "lucide-react";
+import { BadgeCheck, CheckCircle2, CircleHelp, Settings2 } from "lucide-react";
 import type { Verification } from "@/content/types";
 
 const MAP: Record<Verification, { label: string; title: string; cls: string; icon: typeof CheckCircle2 }> = {
+  bekreftet: {
+    label: "Bekreftet av eier",
+    title: "Eieren har bekreftet at traktoren har dette.",
+    cls: "bg-jd-700 text-white",
+    icon: BadgeCheck,
+  },
   verifisert: {
     label: "Verifisert i manualen",
     title: "Står i OMAL219620 og gjelder denne traktortypen.",

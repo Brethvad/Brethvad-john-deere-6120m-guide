@@ -7,14 +7,19 @@ En nettbasert opplæringsressurs på norsk bokmål for en John Deere 6120M. Guid
 
 ## Konfigurasjon guiden er skrevet for
 
+Eieren har bekreftet utstyret nedenfor. Det vises med merket «Bekreftet av eier» i appen.
+
 | Utstyr | Status |
 |---|---|
-| 6120M | Verifisert mot manualen (4045HL, 88 kW) |
-| AutoQuad 24/24, 40 km/t | Guiden forutsetter **AutoQuad™ PLUS**, som er navnet i manualen. Må bekreftes på traktoren. |
-| Fronthydraulikk | Manualen beskriver tre ulike løsninger. Hvilken traktoren har, må bekreftes. |
-| Fjæret foraksel | Verifisert |
-| Førerhusfjæring | Om den er mekanisk eller hydraulisk, må bekreftes |
-| LED-lys | Manualen har ingen egen «LED-pakke». Hvilke lykter som finnes, må bekreftes. |
+| 6120M, modellår 2023 | Bekreftet. Serienummer (PIN) kommer senere. |
+| AutoQuad 24/24, 40 km/t | Bekreftet. Heter **AutoQuad™ PLUS** i manualen. |
+| Fronthydraulikk | Bekreftet. Hvilken av manualens tre varianter det er, er ikke kartlagt. |
+| Fjæret foraksel | Bekreftet |
+| Førerhus med fjæring | Bekreftet. Om fjæringen er mekanisk eller hydraulisk, er ikke kartlagt. |
+| LED-lys | Bekreftet. Hvilke lykter som sitter på, er ikke kartlagt. |
+| Bremser | Ikke oppgitt (én eller to pedaler) |
+
+**Merk:** Traktoren er en 2023-modell, mens manualen guiden bygger på (utgave 19) er fra 2020. Spør forhandleren om det finnes en nyere utgave.
 
 Hele listen med hva som må sjekkes, ligger på siden **/kilder** i appen og i `src/content/config.ts`.
 
@@ -100,6 +105,7 @@ Alt innhold ligger som data i `src/content/`. Komponentene viser det uten egen t
 
 - **Hvert faktum skal ha en kilde.** Blokker og seksjoner har `sources: ["nøkkel"]`, og nøklene må finnes i `sources.ts`. TypeScript gir feil hvis en nøkkel mangler.
 - **Verifiseringsstatus**:
+  - `bekreftet` – eieren har bekreftet at traktoren har dette (brukes i `config.ts`).
   - `verifisert` – står i manualen.
   - `avhenger` – avhenger av utstyr eller utførelse.
   - `uverifisert` – ikke funnet i manualen. Sett aldri `verifisert` uten at det faktisk står i manualen.
@@ -113,15 +119,14 @@ Alt innhold ligger som data i `src/content/`. Komponentene viser det uten egen t
 - **Juridiske krav til veikjøring** (fartsgrenser, førerkort, bredde, lys, merking) gjengis ikke. Guiden lenker til Lovdata og Statens vegvesen. At girkassen er laget for 40 km/t, betyr ikke at 40 km/t er lovlig.
 - **Serviceintervaller**: noen oppgaver i manualens serviceoversikt kunne ikke knyttes sikkert til et intervall, for eksempel ventiljustering og bytte av akkumulator. De er merket «se serviceoversikt» i stedet for å oppgi et tall.
 - Manualen sier ulike ting om tauing. Dette er vist i guiden i stedet for at én versjon er valgt.
-- Manualen er fra 2020 (MY19). Nyere eller eldre traktorer kan avvike.
+- Manualen er fra 2020 (MY19), mens traktoren er en 2023-modell. Detaljer som motorversjon, display og programvare kan ha endret seg.
 
 ## Må verifiseres på selve traktoren
 
-1. PIN/serienummer og modellår. Sjekk med forhandleren at OMAL219620 er riktig manual for traktoren.
-2. At girkassen er AutoQuad™ PLUS. Tegn på det er girknapper på gruppespaken, en Automatic-knapp og AUTO-symbol i displayet.
-3. Hva fronthydraulikken består av: frontløft med stengeventil, bare koplinger foran, eller joystick/frontlaster. Sjekk også om det finnes frontkraftuttak.
-4. Om førerhusfjæringen er mekanisk eller hydraulisk.
-5. Hvilke LED- og arbeidslys som faktisk sitter på.
-6. Om det er én eller to bremsepedaler, og om det finnes en pedallås.
-7. Hvor bryterne for firehjulstrekk, differensialsperre og krypegir sitter. De har ikke nummer på skissen.
-8. Speilinnstilling. Den er ikke beskrevet i manualen.
+1. PIN/serienummer (kommer senere). Sjekk med forhandleren om det finnes en nyere manual for 2023-modellen enn OMAL219620 utgave 19.
+2. Hva fronthydraulikken består av: frontløft med stengeventil, bare koplinger foran, eller joystick/frontlaster. Sjekk også om det finnes frontkraftuttak.
+3. Om førerhusfjæringen er mekanisk eller hydraulisk.
+4. Hvilke LED- og arbeidslys som faktisk sitter på.
+5. Om det er én eller to bremsepedaler, og om det finnes en pedallås.
+6. Hvor bryterne for firehjulstrekk, differensialsperre og krypegir sitter. De har ikke nummer på skissen.
+7. Speilinnstilling. Den er ikke beskrevet i manualen.
