@@ -223,4 +223,10 @@ export const SOURCES: Record<string, Source> = {
   "service-socket": { id: "service-socket", section: "Section 25 - Open Operator's Station and Cab", title: "Service Socket (CAN BUS)", file: "OULXA64,0002A55_19_20120627.html" },
   "battery-access": { id: "battery-access", section: "Section 85 - Lubrication and Periodic Service", title: "Access to the Battery", file: "OULXA64,0003635_19_20150401.html" },
   "battery-disconnect": { id: "battery-disconnect", section: "Section 40 - Operate the Engine", title: "Battery — Disconnect the Electrical Circuit", file: "OULXA64,0003E63_19_20161011.html" },
+  "grease": { id: "grease", section: "Section 80 - Fuel, Lubricants, Hydraulic Oil and Coolant", title: "Multipurpose Extreme Pressure (EP) Grease", file: "DX,GREA1_19_20180113.html" },
+  "observe-intervals": { id: "observe-intervals", section: "Section 85 - Lubrication and Periodic Service", title: "Observe Service Intervals", file: "OU1092A,000002F_19_20040116.html" },
+  "lube-500": { id: "lube-500", section: "Section 100 - Service / After the First 500 Hours and Then Every 500 Hours", title: "Lubricate the Lubrication Points of the Tractor", file: "OULXA64,0003BE7_19_20160310.html" },
+  "lube-after-wash": { id: "lube-after-wash", section: "Section 85 - Lubrication and Periodic Service", title: "Lubricate All Lubricating Points", file: "BB92646,00002A7_19_20060928.html" },
+  "tire-pressures": { id: "tire-pressures", section: "Section 65 - Wheels, Tires", title: "Tire Pressures", file: "OULXA64,000407C_19_20170518.html" },
+  "tire-pressure-guidelines": { id: "tire-pressure-guidelines", section: "Section 65 - Wheels, Tires", title: "Tire Inflation Pressure Guidelines", file: "OULXA64,000407D_19_20170321.html" },
 };

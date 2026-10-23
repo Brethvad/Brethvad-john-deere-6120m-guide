@@ -25,6 +25,7 @@ const TASKS = [
   { to: "/hydraulikk#koble-til", label: "Koble til hydraulikkslanger" },
   { to: "/redskap#koble-til", label: "Koble til redskap i trepunktet" },
   { to: "/veitransport#klargjoring", label: "Klargjøre for veikjøring" },
+  { to: "/manedlig-kontroll", label: "Månedlig smøring og kontroll" },
   { to: "/feilsoking#varsellys", label: "Et varsellys lyser" },
 ];
 

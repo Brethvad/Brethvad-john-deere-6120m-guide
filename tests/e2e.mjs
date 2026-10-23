@@ -26,7 +26,7 @@ async function ctx(viewport) {
 }
 
 // 1. Every route renders an h1 without errors
-const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk", "/fjaering", "/lys", "/redskap", "/veitransport", "/daglig-kontroll", "/vedlikehold", "/feilsoking", "/spesifikasjoner", "/ordliste", "/sikkerhet", "/kilder", "/sok?q=olje", "/finnes-ikke"];
+const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk", "/fjaering", "/lys", "/redskap", "/veitransport", "/daglig-kontroll", "/manedlig-kontroll", "/vedlikehold", "/feilsoking", "/spesifikasjoner", "/ordliste", "/sikkerhet", "/kilder", "/sok?q=olje", "/finnes-ikke"];
 {
   const { page, errors } = await ctx({ width: 1440, height: 900 });
   for (const r of routes) {
@@ -47,7 +47,7 @@ const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk
   }
 
   // 3. Search
-  for (const [q, expect] of [["differensialsperre", "Differensialsperre"], ["rødt lys", "STOP"], ["starter ikke", "Motoren starter dårlig"], ["PTO", "Kraftuttak"], ["SoftShift", "SoftShift"]]) {
+  for (const [q, expect] of [["smørenipler", "Månedlig kontroll"], ["dekktrykk", "Månedlig kontroll"], ["differensialsperre", "Differensialsperre"], ["rødt lys", "STOP"], ["starter ikke", "Motoren starter dårlig"], ["PTO", "Kraftuttak"], ["SoftShift", "SoftShift"]]) {
     await page.goto(BASE + "/", { waitUntil: "networkidle" });
     await page.fill("#global-search", q);
     await page.press("#global-search", "Enter");
@@ -88,6 +88,20 @@ const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk
   check(checked === 2, "checklist state persists after reload", `checklist persisted ${checked}`);
   await page.getByRole("button", { name: "Nullstill" }).click();
   check((await page.locator('main input[type="checkbox"]:checked').count()) === 0, "checklist reset", "checklist reset");
+
+  // 5b. Monthly checklist: its own storage, independent of the daily one
+  await page.goto(BASE + "/manedlig-kontroll", { waitUntil: "networkidle" });
+  const mBoxes = page.locator('main input[type="checkbox"]');
+  const mCount = await mBoxes.count();
+  check(mCount >= 15 && mCount <= 25, `monthly checklist has ${mCount} items`, `monthly checklist item count ${mCount}`);
+  await mBoxes.nth(2).check({ force: true });
+  await page.reload({ waitUntil: "networkidle" });
+  check((await page.locator('main input[type="checkbox"]:checked').count()) === 1, "monthly checklist persists", "monthly checklist did not persist");
+  await page.goto(BASE + "/daglig-kontroll", { waitUntil: "networkidle" });
+  check((await page.locator('main input[type="checkbox"]:checked').count()) === 0, "monthly and daily checklists are independent", "daily checklist picked up monthly state");
+  await page.goto(BASE + "/manedlig-kontroll", { waitUntil: "networkidle" });
+  await page.getByRole("button", { name: "Nullstill" }).click();
+  await page.screenshot({ path: SHOTS + "manedlig-desktop.png", fullPage: true });
 
   // 6. Simplified explanation toggle + details
   await page.goto(BASE + "/girkasse", { waitUntil: "networkidle" });

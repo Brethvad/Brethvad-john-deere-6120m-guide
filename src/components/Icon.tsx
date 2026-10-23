@@ -1,5 +1,5 @@
 import {
-  Armchair, Book, Box, ClipboardCheck, Cog, Droplets, FileCheck, Home, Lightbulb, Link2, SearchCheck, Shield,
+  Armchair, Book, Box, CalendarCheck, ClipboardCheck, Cog, Droplets, FileCheck, Home, Lightbulb, Link2, SearchCheck, Shield,
   Table2, Truck, Waves, Wrench, CircleDot, type LucideIcon,
 } from "lucide-react";
 
@@ -15,6 +15,7 @@ const ICONS: Record<string, LucideIcon> = {
   link: Link2,
   truck: Truck,
   "clipboard-check": ClipboardCheck,
+  "calendar-check": CalendarCheck,
   wrench: Wrench,
   "search-check": SearchCheck,
   table: Table2,

@@ -59,6 +59,63 @@ export const CHECKLISTS: Record<string, Checklist> = {
       },
     ],
   },
+  manedlig: {
+    id: "manedlig",
+    title: "Månedlig kontroll (guidens forslag)",
+    intro:
+      "Manualen regner intervaller i driftstimer, ikke måneder. Denne listen samler punkter som manualen ber deg gjøre «jevnlig», minst én gang i året eller oftere ved tøffe forhold, slik at de blir gjort én gang i måneden. Den erstatter ikke daglig kontroll eller 500-timersservicen.",
+    groups: [
+      {
+        title: "Smøring",
+        condition: "Motoren AV, parkeringslås PÅ. Front- og bakløft senket helt, frontlaster senket (hvis montert).",
+        items: [
+          { text: "Rengjør smøreniplene før du setter på fettpressen. Bytt nipler som er skadet. (Generelt råd. Manualen sier dette uttrykkelig bare for en annen forakseltype.)" },
+          { text: "Bakløft: smør smørepunktene på løftet, løftearmsblokken og stabilisatorene (se figurene i manualen). Press inn fett til gammelt fett, skitt eller vann kommer ut.", source: "greasing" },
+          { text: "Bakakselens lagre: bare 6–8 slag med fettpressen per lager. Ikke press til fett kommer ut.", source: "rear-axle-bearings" },
+          { text: "Fjæret foraksel: smør kardangleddene og hydraulikksylinderen.", source: "lubrication-points" },
+          { text: "Kardangaksel mellom motor og girkasse (hvis montert).", source: "lubrication-points" },
+          { text: "Hydraulisk førerhusfjæring: smør sylinderen. Gjelder ikke mekanisk førerhusfjæring.", source: "lubrication-points" },
+          { text: "Trekkfeste, pick-up hitch og frontløft: smør det som er montert.", source: "lubrication-points" },
+          { text: "Tørk bort overflødig fett, og kast det etter lokale regler.", source: "greasing" },
+        ],
+      },
+      {
+        title: "Dekk og hjul",
+        condition: "Kalde dekk, traktoren står på fast underlag.",
+        items: [
+          { text: "Mål dekktrykket med en nøyaktig måler (inndeling 0,1 bar). Har dekkene væskeballast, bruk en egen luft/vann-måler med ventilen nederst.", source: "tire-pressure-guidelines" },
+          { text: "Sammenlign med trykket du har fått fra forhandler eller dekkprodusent. Største tillatte trykk står på dekksiden. Trykk under 0,8 bar må sjekkes ofte.", source: "tire-pressures" },
+          { text: "Dekkene er i god stand: se etter kutt, sprekker og unormal slitasje.", source: "general-condition" },
+        ],
+      },
+      {
+        title: "Grundig rundgang",
+        condition: "Motoren AV og avkjølt. Bruk lommelykt.",
+        items: [
+          { text: "Hydraulikkslanger: se nøye etter lekkasje, knekk, kutt, gnag, bobler, rust og synlig vev. Skadde slanger byttes straks. Bruk papp, aldri hendene.", source: "hoses-inspect" },
+          { text: "Elektriske ledninger og jordforbindelser er i god stand.", source: "general-condition" },
+          { text: "Advarselsdekaler er på plass og lesbare. Vern og skjermer sitter som de skal.", source: "general-condition" },
+          { text: "Trekkstang og bolter: se etter synlig slitasje. Måling mot slitasjegrensene hører til 500-timersservicen.", source: "drawbar-wear" },
+        ],
+      },
+      {
+        title: "Førerhus",
+        condition: "Motoren på tomgang for klimaanlegget, ellers AV.",
+        items: [
+          { text: "Kjør klimaanlegget noen minutter. Manualen ber om dette én gang i måneden, for å blande kuldemedium og olje og forebygge feil.", source: "aircon" },
+          { text: "Setebelte: se etter løse fester, kutt, frynser, uvanlig slitasje, misfarging eller blank overflate på beltet. Sjekk også låsen og opprullingen. Ved skade byttes hele beltet hos forhandler.", source: "seat-belt-inspect" },
+        ],
+      },
+      {
+        title: "Timer og logg",
+        condition: "Tenning PÅ.",
+        items: [
+          { text: "Les av timetelleren, og se på vedlikeholdssiden hva som forfaller snart. Ved hver 500. time gir traktoren et lydsignal ved de fem neste startene.", source: "service-intervals" },
+          { text: "Skriv ned dato, timer og hva som ble gjort i vedlikeholdsloggen.", source: "observe-intervals" },
+        ],
+      },
+    ],
+  },
   sikt: {
     id: "sikt",
     title: "Lys og sikt",

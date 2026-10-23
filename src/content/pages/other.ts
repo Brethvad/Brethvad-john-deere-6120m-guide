@@ -198,7 +198,135 @@ export const dagligKontroll: Page = {
       sources: ["daily-engine-oil", "daily-coolant", "cooling-safely", "daily-trans-oil", "daily-fuel-filter"],
     },
   ],
-  related: ["vedlikehold", "betjening", "feilsoking"],
+  related: ["manedlig-kontroll", "vedlikehold", "feilsoking"],
+};
+
+export const manedligKontroll: Page = {
+  slug: "manedlig-kontroll",
+  title: "Månedlig kontroll",
+  nav: "Månedlig kontroll",
+  group: "Kontroll og vedlikehold",
+  icon: "calendar-check",
+  intro:
+    "En fast runde én gang i måneden: smøring, dekktrykk, en grundigere rundgang og noen punkter i førerhuset. Regn med en halvtime eller litt mer. Avkrysningen lagres i nettleseren din til du nullstiller.",
+  sections: [
+    {
+      id: "om",
+      title: "Hvorfor månedlig?",
+      verification: "avhenger",
+      blocks: [
+        {
+          type: "callout",
+          kind: "usikker",
+          title: "Ikke et intervall fra manualen",
+          text:
+            "Manualen har ingen månedlig service. Den regner i driftstimer: smøring ved 500-timersservicen, hver dag ved svært vått og gjørmete arbeid, og etter høytrykksvask. Den ber deg også gjøre en grundig visuell kontroll «jevnlig». Én gang i måneden er guidens forslag for å få dette gjort fast.",
+        },
+        {
+          type: "list",
+          items: [
+            "Kjører du mye, kommer timeintervallene først. Følg dem. Se Vedlikehold.",
+            "Ved tøffe forhold skal du vedlikeholde oftere enn intervallene sier.",
+            "Har traktoren blitt høytrykksvasket, skal alle smørepunktene smøres. Ikke vent på neste månedskontroll.",
+            "Ett punkt er faktisk månedlig i manualen: klimaanlegget skal gå noen minutter én gang i måneden.",
+          ],
+        },
+      ],
+      sources: ["service-intervals", "observe-intervals", "lube-500", "lubrication-points", "lube-after-wash", "aircon"],
+    },
+    {
+      id: "sjekkliste",
+      title: "Sjekkliste",
+      verification: "verifisert",
+      blocks: [
+        {
+          type: "callout",
+          kind: "advarsel",
+          text:
+            "Stopp motoren før du smører. Senk front- og bakløft helt, og sett på parkeringslåsen. Senk frontlasteren hvis den er montert. Smør aldri kardangaksler mens motoren går.",
+        },
+        { type: "checklist", id: "manedlig" },
+      ],
+      sources: ["greasing", "lubrication-points", "rear-axle-bearings", "tire-pressure-guidelines", "hoses-inspect", "general-condition", "seat-belt-inspect"],
+    },
+    {
+      id: "smoring",
+      title: "Slik smører du",
+      verification: "verifisert",
+      blocks: [
+        {
+          type: "steps",
+          title: "Smørenipler",
+          items: [
+            "Motor av, parkeringslås på, front- og bakløft senket helt.",
+            "Bruk vanlig fettpresse. Press inn fett til gammelt fett, skitt eller vann kommer ut av smørepunktet.",
+            "Unntak: bakakselens lagre får bare 6–8 slag.",
+            "Tørk bort overflødig fett.",
+            "Har kardangleddet et vern uten åpning til smøreniplen, må vernet tas av først. Sett det på igjen etterpå.",
+          ],
+        },
+        {
+          type: "steps",
+          title: "Kardangaksel på forakselen",
+          items: [
+            "Smøreniplene kan være vanskelige å nå. Manualen beskriver det slik:",
+            "Drei rattet til fullt utslag.",
+            "Stopp motoren og sett på parkeringslåsen.",
+            "Jekk opp akselknokken til hjulet går fritt. Bruk godkjente løftepunkter og støtt traktoren forsvarlig.",
+            "Drei hjulet til fettpressen når niplen.",
+          ],
+        },
+        {
+          type: "callout",
+          kind: "fare",
+          text: "Hold deg unna fareområdet under hjulet mens traktoren står på jekk.",
+        },
+        {
+          type: "table",
+          caption: "Smørepunkter som er aktuelle for denne konfigurasjonen",
+          head: ["Område", "Gjelder"],
+          rows: [
+            ["Bakløft, løftearmsblokk og stabilisatorer", "Alle"],
+            ["Bakakselens lagre (6–8 slag)", "Alle"],
+            ["Kardangledd og hydraulikksylinder, fjæret foraksel", "Fjæret foraksel"],
+            ["Kardangaksel mellom motor og girkasse", "Hvis montert"],
+            ["Sylinder for hydraulisk førerhusfjæring", "Bare hydraulisk førerhusfjæring"],
+            ["Trekkfeste og pick-up hitch", "Hvis montert"],
+            ["Frontløft", "Hvis montert"],
+          ],
+        },
+        {
+          type: "p",
+          text:
+            "Utstyret varierer, så se manualens figurer for å finne hvert punkt. Ser du ikke en komponent på traktoren, hopper du over den. Manualen anbefaler John Deere SD Polyurea Grease. Andre fetttyper kan brukes hvis de oppfyller kravene i seksjon 80. Velg NLGI-klasse etter temperaturen du venter.",
+        },
+      ],
+      sources: ["greasing", "lubrication-points", "rear-axle-bearings", "grease"],
+    },
+    {
+      id: "dekktrykk",
+      title: "Dekktrykk",
+      verification: "verifisert",
+      blocks: [
+        {
+          type: "p",
+          text:
+            "Riktig trykk avhenger av arbeid, last, dekkstørrelse og dekkprodusent. Manualen sier derfor at du skal få trykket fra forhandler eller dekkprodusent. Største tillatte trykk står på dekksiden.",
+        },
+        {
+          type: "list",
+          items: [
+            "Mål på kalde dekk med en nøyaktig måler.",
+            "Radialdekk med riktig trykk buler litt ut i siden. Det er normalt.",
+            "Med frontlaster skal trykket foran økes med 0,3 bar i forhold til tabellverdien.",
+            "For lavt trykk gir rask slitasje. For høyt trykk gir dårligere grep og mer hjulspinn.",
+          ],
+        },
+      ],
+      sources: ["tire-pressures", "tire-pressure-guidelines"],
+    },
+  ],
+  related: ["daglig-kontroll", "vedlikehold", "redskap"],
 };
 
 export const vedlikehold: Page = {
@@ -234,7 +362,7 @@ export const vedlikehold: Page = {
       sources: ["service-intervals", "safe-maintenance", "park-safely", "pressure-washer", "greasing"],
     },
   ],
-  related: ["daglig-kontroll", "spesifikasjoner", "feilsoking"],
+  related: ["daglig-kontroll", "manedlig-kontroll", "spesifikasjoner", "feilsoking"],
 };
 
 export const sikkerhet: Page = {
