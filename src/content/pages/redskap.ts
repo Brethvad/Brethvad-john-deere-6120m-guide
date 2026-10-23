@@ -217,5 +217,5 @@ export const redskap: Page = {
       sources: ["front-hitch-economy", "front-pto"],
     },
   ],
-  related: ["hydraulikk", "veitransport", "spesifikasjoner"],
+  related: ["snoutstyr", "hydraulikk", "veitransport", "spesifikasjoner"],
 };

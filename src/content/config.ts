@@ -104,6 +104,16 @@ export const CONFIG: ConfigItem[] = [
     sources: ["light-switch-cab", "emergency-exits"],
   },
   {
+    label: "Snøutstyr",
+    supplied: "Tokvam VT 280 City (vikeplog) og Tokvam 240 THS (snøfreser)",
+    manual:
+      "Ikke omtalt i John Deere-manualen. Guiden bygger på Tokvams bruksanvisninger og produktsider, sammenholdt med traktorens data.",
+    verification: "bekreftet",
+    todo:
+      "Les CE-nummeret på maskinskiltet til freseren (to versjoner av 240 THS). Avklar med forhandler: hvilket feste og uttak plogen skal ha foran, hvilken kontakt ventilene skal ha strøm fra, og om traktorens oljetrykk (opptil 205 bar) er greit for tutsvingen (maks 175 bar).",
+    sources: ["vt-tech", "vt-hydraulics", "ths-tech", "ths-connect"],
+  },
+  {
     label: "Bremser",
     supplied: "Ikke oppgitt",
     manual:

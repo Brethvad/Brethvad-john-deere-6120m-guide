@@ -26,7 +26,7 @@ async function ctx(viewport) {
 }
 
 // 1. Every route renders an h1 without errors
-const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk", "/fjaering", "/lys", "/redskap", "/veitransport", "/daglig-kontroll", "/manedlig-kontroll", "/vedlikehold", "/feilsoking", "/spesifikasjoner", "/ordliste", "/sikkerhet", "/kilder", "/sok?q=olje", "/finnes-ikke"];
+const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk", "/fjaering", "/lys", "/redskap", "/snoutstyr", "/veitransport", "/daglig-kontroll", "/manedlig-kontroll", "/vedlikehold", "/feilsoking", "/spesifikasjoner", "/ordliste", "/sikkerhet", "/kilder", "/sok?q=olje", "/finnes-ikke"];
 {
   const { page, errors } = await ctx({ width: 1440, height: 900 });
   for (const r of routes) {
@@ -47,7 +47,7 @@ const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk
   }
 
   // 3. Search
-  for (const [q, expect] of [["smørenipler", "Månedlig kontroll"], ["dekktrykk", "Månedlig kontroll"], ["differensialsperre", "Differensialsperre"], ["rødt lys", "STOP"], ["starter ikke", "Motoren starter dårlig"], ["PTO", "Kraftuttak"], ["SoftShift", "SoftShift"]]) {
+  for (const [q, expect] of [["brytebolt", "Snøutstyr"], ["Tokvam", "Snøutstyr"], ["smørenipler", "Månedlig kontroll"], ["dekktrykk", "Månedlig kontroll"], ["differensialsperre", "Differensialsperre"], ["rødt lys", "STOP"], ["starter ikke", "Motoren starter dårlig"], ["PTO", "Kraftuttak"], ["SoftShift", "SoftShift"]]) {
     await page.goto(BASE + "/", { waitUntil: "networkidle" });
     await page.fill("#global-search", q);
     await page.press("#global-search", "Enter");
@@ -102,6 +102,14 @@ const routes = ["/", "/3d", "/forerhus", "/betjening", "/girkasse", "/hydraulikk
   await page.goto(BASE + "/manedlig-kontroll", { waitUntil: "networkidle" });
   await page.getByRole("button", { name: "Nullstill" }).click();
   await page.screenshot({ path: SHOTS + "manedlig-desktop.png", fullPage: true });
+
+  // 5c. Snow equipment page: checklist and external source links
+  await page.goto(BASE + "/snoutstyr", { waitUntil: "networkidle" });
+  const sCount = await page.locator('main input[type="checkbox"]').count();
+  check(sCount === 17, `snow checklist has ${sCount} items`, `snow checklist item count ${sCount}`);
+  const tokvamLinks = await page.locator('main a[href*="doc.tokvam.no"]').count();
+  check(tokvamLinks > 0, `snow page links to Tokvam manuals (${tokvamLinks})`, "no Tokvam manual links");
+  await page.screenshot({ path: SHOTS + "snoutstyr-desktop.png", fullPage: true });
 
   // 6. Simplified explanation toggle + details
   await page.goto(BASE + "/girkasse", { waitUntil: "networkidle" });

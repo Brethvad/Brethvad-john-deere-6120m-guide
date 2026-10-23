@@ -17,6 +17,7 @@ Eieren har bekreftet utstyret nedenfor. Det vises med merket «Bekreftet av eier
 | Fjæret foraksel | Bekreftet |
 | Førerhus med fjæring | Bekreftet. Om fjæringen er mekanisk eller hydraulisk, er ikke kartlagt. |
 | LED-lys | Bekreftet. Hvilke lykter som sitter på, er ikke kartlagt. |
+| Snøutstyr | Tokvam VT 280 City (vikeplog foran) og 240 THS (snøfreser bak). Bekreftet. Siden bygger på Tokvams bruksanvisninger. |
 | Bremser | Ikke oppgitt (én eller to pedaler) |
 
 **Merk:** Traktoren er en 2023-modell, mens manualen guiden bygger på (utgave 19) er fra 2020. Spør forhandleren om det finnes en nyere utgave.
@@ -81,7 +82,7 @@ Alle statiske verter fungerer, f.eks. Vercel, Cloudflare Pages eller GitHub Page
 src/
   content/            ← ALT innhold ligger her, som typede data
     types.ts          Innholdsmodell (Page → Section → Block, Control, Problem …)
-    sources.ts        Register over manualsider (nøkkel → fil i OMAL219620)
+    sources.ts        Register over kilder: manualsider i OMAL219620 og Tokvams bruksanvisninger (url)
     config.ts         Traktorens konfigurasjon, verifiseringsstatus og hva som må sjekkes
     controls.ts       Betjeningsorganer i førerhuset, med plassering på skissen
     parts.ts          Deler i 3D-modellen
@@ -130,3 +131,4 @@ Alt innhold ligger som data i `src/content/`. Komponentene viser det uten egen t
 5. Om det er én eller to bremsepedaler, og om det finnes en pedallås.
 6. Hvor bryterne for firehjulstrekk, differensialsperre og krypegir sitter. De har ikke nummer på skissen.
 7. Speilinnstilling. Den er ikke beskrevet i manualen.
+8. Snøfreserens CE-nummer (to versjoner av 240 THS). Avklar også med forhandler: feste og uttak for plogen foran, strøm til plogens ventiler, og om traktorens oljetrykk (opptil 205 bar) er greit for freserens tutsving (maks 175 bar).

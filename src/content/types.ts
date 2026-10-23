@@ -23,6 +23,8 @@ export interface Source {
   title: string;
   /** File name of the page in the online manual. */
   file: string;
+  /** Full URL for sources outside the John Deere manual (e.g. implement manuals). */
+  url?: string;
 }
 
 export type CalloutKind = "fare" | "advarsel" | "viktig" | "merk" | "usikker";

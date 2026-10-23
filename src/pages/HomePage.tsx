@@ -15,6 +15,7 @@ const SYSTEMS = [
   { to: "/fjaering", icon: "waves", title: "Fjæring", text: "Fjæret foraksel og førerhusfjæring." },
   { to: "/lys", icon: "lightbulb", title: "Lys", text: "Veilys, arbeidslys, blinklys og sjekkliste for sikt." },
   { to: "/redskap", icon: "link", title: "Redskap", text: "Trepunktsløft, kraftuttak og trekkstang." },
+  { to: "/snoutstyr", icon: "snowflake", title: "Snøutstyr", text: "Tokvam VT 280 City foran og 240 THS bak." },
 ];
 
 const TASKS = [
@@ -24,6 +25,7 @@ const TASKS = [
   { to: "/girkasse#parkere", label: "Stoppe og parkere" },
   { to: "/hydraulikk#koble-til", label: "Koble til hydraulikkslanger" },
   { to: "/redskap#koble-til", label: "Koble til redskap i trepunktet" },
+  { to: "/snoutstyr#freser", label: "Koble til snøfreser og plog" },
   { to: "/veitransport#klargjoring", label: "Klargjøre for veikjøring" },
   { to: "/manedlig-kontroll", label: "Månedlig smøring og kontroll" },
   { to: "/feilsoking#varsellys", label: "Et varsellys lyser" },

@@ -116,6 +116,48 @@ export const CHECKLISTS: Record<string, Checklist> = {
       },
     ],
   },
+  snoutstyr: {
+    id: "snoutstyr",
+    title: "Før snørydding",
+    intro: "Punktene er hentet fra Tokvams bruksanvisninger for VT City og THS og fra John Deere-manualen. Hopp over redskapet du ikke bruker i dag.",
+    groups: [
+      {
+        title: "Vikeplog VT 280 City",
+        condition: "Plogen står på bakken. Motoren AV, parkeringslås PÅ.",
+        items: [
+          { text: "Hydraulikkslanger: ingen lekkasjer eller brudd.", source: "vt-safety" },
+          { text: "Sliteskjær: ikke slitt for langt.", source: "vt-safety" },
+          { text: "Ingen skader på konstruksjonen, særlig ved skjærholderen og rundt kingbolten.", source: "vt-safety" },
+          { text: "Sikkerhetsutstyret er på plass.", source: "vt-safety" },
+          { text: "Koblingsboltene er låst. Strøm og hydraulikk er koblet til.", source: "vt-connect" },
+          { text: "Med motoren i gang: kjør alle bevegelser noen ganger. Ingen står ved plogen.", source: "vt-connect" },
+        ],
+      },
+      {
+        title: "Snøfreser 240 THS",
+        condition: "Motoren AV og nøkkelen ute.",
+        items: [
+          { text: "Boltene i underarmer og toppstag sitter godt.", source: "ths-connect" },
+          { text: "Slangene til tutsvingen er tette og hele.", source: "ths-connect" },
+          { text: "Kraftoverføringsakselen: vernet er helt, og kjettingene er festet i begge ender. Akselen går rundt for hånd uten å ta borti noe.", source: "ths-connect" },
+          { text: "Alle deksler er på: tutvern, kjededeksler og dekselet over brytebolten (nede).", source: "ths-safety" },
+          { text: "Freseren står vannrett, og vekten ligger på skiene bak.", source: "ths-use" },
+          { text: "Kjeder og knutekryss er smurt (hver 10. time).", source: "ths-service" },
+          { text: "Reservebrytebolter (M8×45, 8.8, med låsemutter) og en spade eller stake ligger i traktoren.", source: "ths-shear" },
+        ],
+      },
+      {
+        title: "Traktoren",
+        condition: "Før du kjører ut.",
+        items: [
+          { text: "Daglig kontroll er gjort.", source: "prestart" },
+          { text: "540 o/min er valgt på PTO-spaken (kraftuttaket AV). SoftShift er av.", source: "rear-pto-engage" },
+          { text: "Ballast og aksellaster er riktige for redskapene som sitter på.", source: "ballast-selection" },
+          { text: "Lys og blinklys er ikke dekket av plog eller freser.", source: "drive-roads" },
+        ],
+      },
+    ],
+  },
   sikt: {
     id: "sikt",
     title: "Lys og sikt",

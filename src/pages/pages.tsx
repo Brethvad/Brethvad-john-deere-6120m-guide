@@ -136,7 +136,7 @@ export function MaintenancePage() {
                         <div>
                           <p className="text-[15px]">{t.task}</p>
                           {t.note && <p className="mt-0.5 text-sm text-muted">{t.note}</p>}
-                          {s && <a href={sourceUrl(s.file)} target="_blank" rel="noopener noreferrer" className="text-xs text-jd-700 hover:underline">Kilde: {s.title}</a>}
+                          {s && <a href={sourceUrl(s)} target="_blank" rel="noopener noreferrer" className="text-xs text-jd-700 hover:underline">Kilde: {s.title}</a>}
                         </div>
                         <span className={`chip self-start ${t.who === "verksted" ? "bg-info-soft text-info" : t.who === "fører" ? "bg-jd-100 text-jd-800" : "bg-signal-soft text-[#5a4d00]"}`}>
                           <Wrench className="size-3" aria-hidden />{t.who}
@@ -185,7 +185,7 @@ export function SpecsPage() {
                     </td>
                     <td className="px-4 py-2.5 text-right">
                       <VerificationBadge value={s.verification} />
-                      <a href={sourceUrl(SOURCES[s.source]?.file ?? "")} target="_blank" rel="noopener noreferrer" className="mt-1 block text-xs text-jd-700 hover:underline">kilde</a>
+                      <a href={sourceUrl(SOURCES[s.source] ?? { file: "" })} target="_blank" rel="noopener noreferrer" className="mt-1 block text-xs text-jd-700 hover:underline">kilde</a>
                     </td>
                   </tr>
                 ))}
@@ -281,7 +281,7 @@ export function SourcesPage() {
                     <td className="px-3 py-2">{s.verification && <VerificationBadge value={s.verification} />}</td>
                     <td className="px-3 py-2 text-muted">
                       {(s.sources ?? []).map((id) => SOURCES[id]).filter(Boolean).map((src, i) => (
-                        <span key={src.id}>{i > 0 && "; "}<a href={sourceUrl(src.file)} target="_blank" rel="noopener noreferrer" className="hover:underline">{src.title}</a></span>
+                        <span key={src.id}>{i > 0 && "; "}<a href={sourceUrl(src)} target="_blank" rel="noopener noreferrer" className="hover:underline">{src.title}</a></span>
                       ))}
                     </td>
                   </tr>

@@ -55,7 +55,7 @@ export function ChecklistView({ id }: { id: string }) {
                       <span className="text-[15px] leading-relaxed">
                         <span className={checked ? "line-through decoration-1" : ""}>{item.text}</span>
                         {src && (
-                          <a href={sourceUrl(src.file)} target="_blank" rel="noopener noreferrer" className="ml-1 text-xs text-jd-700 hover:underline" onClick={(e) => e.stopPropagation()}>
+                          <a href={sourceUrl(src)} target="_blank" rel="noopener noreferrer" className="ml-1 text-xs text-jd-700 hover:underline" onClick={(e) => e.stopPropagation()}>
                             [kilde]
                           </a>
                         )}

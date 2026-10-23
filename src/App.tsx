@@ -6,7 +6,7 @@ import {
   CabPage, ContentPage, GlossaryPage, MaintenancePage, NotFound, SearchPage, SourcesPage, SpecsPage, TroubleshootingPage,
 } from "@/pages/pages";
 
-const CONTENT = ["betjening", "girkasse", "hydraulikk", "fjaering", "lys", "redskap", "veitransport", "daglig-kontroll", "manedlig-kontroll", "sikkerhet"];
+const CONTENT = ["betjening", "girkasse", "hydraulikk", "fjaering", "lys", "redskap", "snoutstyr", "veitransport", "daglig-kontroll", "manedlig-kontroll", "sikkerhet"];
 
 export default function App() {
   return (

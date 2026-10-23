@@ -1,7 +1,12 @@
 import type { Term } from "./types";
 
 export const GLOSSARY: Term[] = [
-  { term: "AutoQuad™ PLUS (AQ+)", en: "AutoQuad PLUS transmission", explanation: "En delvis powershift-girkasse: gir 1–4 skiftes under last med knapper (eller automatisk), mens gruppene A–F krever clutch.", onThisTractor: "Antatt girkasse (24/24, 40 km/t). Må bekreftes.", link: "/girkasse" },
+  { term: "Vikeplog", en: "V-plow", explanation: "Snøplog med to vinger som kan stilles i V, Y eller skrått. Sitter foran.", onThisTractor: "Tokvam VT 280 City.", link: "/snoutstyr#plog" },
+  { term: "Totrinns snøfreser", en: "Two-stage snow blower", explanation: "Snøfreser der en snegle fører snøen inn til en vifte som kaster den ut gjennom tuten.", onThisTractor: "Tokvam 240 THS i bakre trepunkt.", link: "/snoutstyr#freser" },
+  { term: "Brytebolt", en: "Shear bolt", explanation: "Bolt som ryker med vilje når noe kjører seg fast, så drivverket ikke skades. Byttes med bolt av riktig dimensjon og kvalitet.", onThisTractor: "240 THS: M8×45, kvalitet 8.8, med låsemutter.", link: "/snoutstyr#freser" },
+  { term: "Sjokkventil", en: "Shock valve", explanation: "Ventil som slipper ut hydraulikktrykket når plogen treffer en hindring.", onThisTractor: "VT 280 City. Virker bare når du kjører forover.", link: "/snoutstyr#plog" },
+  { term: "Kraftoverføringsaksel", en: "PTO shaft", explanation: "Akselen (kardangen) mellom traktorens PTO-tapp og redskapet. Lengden må tilpasses traktoren.", link: "/snoutstyr#freser" },
+  { term: "AutoQuad™ PLUS (AQ+)", en: "AutoQuad PLUS transmission", explanation: "En delvis powershift-girkasse: gir 1–4 skiftes under last med knapper (eller automatisk), mens gruppene A–F krever clutch.", onThisTractor: "Girkassen på denne traktoren (24/24, 40 km/t), bekreftet av eier.", link: "/girkasse" },
   { term: "Gruppe", en: "Range", explanation: "Et fartsområde (A–F) med fire gir. Velges med gruppespaken og clutch.", link: "/girkasse#oppbygging" },
   { term: "Gir", en: "Gear", explanation: "Trinn 1–4 innenfor en gruppe. Skiftes med knapper uten clutch.", link: "/girkasse#oppbygging" },
   { term: "Kjøreretningshendel (revers)", en: "Reverse drive lever", explanation: "Hendelen til venstre for rattet som velger forover, nøytral eller bakover — og setter traktoren i gang.", link: "/girkasse#kjoreretning" },

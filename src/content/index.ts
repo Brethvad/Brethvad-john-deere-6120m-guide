@@ -6,6 +6,7 @@ import { fjaering } from "./pages/fjaering";
 import { lys } from "./pages/lys";
 import { redskap } from "./pages/redskap";
 import { veitransport } from "./pages/veitransport";
+import { snoutstyr } from "./pages/snoutstyr";
 import { forerhus, dagligKontroll, manedligKontroll, vedlikehold, sikkerhet } from "./pages/other";
 import { CONTROLS, ZONE_LABEL } from "./controls";
 import { PROBLEMS } from "./problems";
@@ -17,7 +18,7 @@ import { CHECKLISTS } from "./checklists";
 
 /** Content pages rendered by the generic page renderer, keyed by slug. */
 export const PAGES: Record<string, Page> = Object.fromEntries(
-  [forerhus, betjening, girkasse, hydraulikk, fjaering, lys, redskap, veitransport, dagligKontroll, manedligKontroll, vedlikehold, sikkerhet].map((p) => [p.slug, p]),
+  [forerhus, betjening, girkasse, hydraulikk, fjaering, lys, redskap, snoutstyr, veitransport, dagligKontroll, manedligKontroll, vedlikehold, sikkerhet].map((p) => [p.slug, p]),
 );
 
 export interface NavItem {
@@ -38,6 +39,7 @@ export const NAV: NavItem[] = [
   { to: "/fjaering", label: "Fjæring", icon: "waves", group: "Systemer" },
   { to: "/lys", label: "Lys", icon: "lightbulb", group: "Systemer" },
   { to: "/redskap", label: "Redskap", icon: "link", group: "Betjening" },
+  { to: "/snoutstyr", label: "Snøutstyr", icon: "snowflake", group: "Betjening" },
   { to: "/veitransport", label: "Veitransport", icon: "truck", group: "Betjening" },
   { to: "/daglig-kontroll", label: "Daglig kontroll", icon: "clipboard-check", group: "Kontroll og vedlikehold" },
   { to: "/manedlig-kontroll", label: "Månedlig kontroll", icon: "calendar-check", group: "Kontroll og vedlikehold" },
